@@ -92,16 +92,16 @@
 <body>
 
     <div class="topnav">
-        <img src="img/logo.png" alt="Logo" class="logo">
+        <img src="{{ URL::asset('img/logo.png') }}" alt="Logo" class="logo">
         <div class="right-menu">
-            <a href="hitung_bill.html"><img src="img/hitung_bill.png" alt="Create Bill"></a>
-            <a href="bill_history.html"><img src="img/bill_history.png" alt="Bill History"></a>
-            <a href="profile.html"><img src="img/profile.png" alt="Profile"></a>
+            <a href="{{ url('/create') }}"><img src="{{ URL::asset('img/hitung_bill.png') }}" alt="Create Bill"></a>
+            <a href="{{ url('/history') }}"><img src="{{ URL::asset('img/bill_history.png') }}" alt="Bill History"></a>
+            <a href="{{ url('/profile') }}"><img src="{{ URL::asset('img/profile.png') }}" alt="Profile"></a>
         </div>
     </div>
     <h1>CHANGE USER DATA</h1>
     <table>
-        <!-- <?php include('user_data.php'); ? -->
+        <!-- <?php include('user_data.php'); ?> -->
         <!-- bagian ini kebawah cuma placeholder buat liat style nya -->
         <tr>
             <th>ID</th>
@@ -122,7 +122,7 @@
 </body>
 <script>
     function redirectToEditUser() {
-        window.location.href = "admin-edituser.html";
+        window.location.href = "{{ url('admin-edit user') }}";
     }
 </script>
 

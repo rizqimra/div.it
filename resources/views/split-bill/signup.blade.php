@@ -119,7 +119,7 @@ Are you new here?</p>
                     Sign Up
                 </button>
             </form>
-            <p class="login-text">Have an account? <a href="login.html">Login here</a></p>
+            <p class="login-text">Have an account? <a href="{{ url('/login') }}">Login here</a></p>
         </div>
         <div class="info-cont">
             <p class="info"> DIV.IT is a revolutionary platform designed to simplify the process of splitting bills and

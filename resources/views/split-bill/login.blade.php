@@ -114,7 +114,7 @@
                     Login
                 </button>
             </form>
-            <p class="signup-text">Don't have an account? <a href="signup.html">Sign up here</a></p>
+            <p class="signup-text">Don't have an account? <a href="{{ url('/register') }}">Sign up here</a></p>
         </div>
     </div>
 </body>

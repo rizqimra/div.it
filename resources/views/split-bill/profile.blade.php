@@ -126,11 +126,11 @@ width: 100%;
 
 <body>
     <div class="topnav">
-        <img src="img/logo.png" alt="Logo" class="logo">
+        <img src="{{ URL::asset('img/logo.png') }}" alt="Logo" class="logo">
         <div class="right-menu">
-            <a href="hitung_bill.html"><img src="img/hitung_bill.png" alt="Create Bill"></a>
-            <a href="bill_history.html"><img src="img/bill_history.png" alt="Bill History"></a>
-            <a href="profile.html"><img src="img/profile.png" alt="Profile"></a>
+            <a href="{{ url('/create') }}"><img src="{{ URL::asset('img/hitung_bill.png') }}" alt="Create Bill"></a>
+            <a href="{{ url('/history') }}"><img src="{{ URL::asset('img/bill_history.png') }}" alt="Bill History"></a>
+            <a href="{{ url('/profile') }}"><img src="{{ URL::asset('img/profile.png') }}" alt="Profile"></a>
         </div>
     </div>
     <div class="container">
@@ -166,7 +166,7 @@ width: 100%;
             </table>
         </form>
         <div class="button-container">
-            <form action="editprofile.html" method="get">
+            <form action="{{ url('edit-profile') }}" method="get">
                 <button type="submit">
                     Edit
                 </button>

@@ -141,11 +141,11 @@
 
 <body>
     <div class="topnav">
-        <img src="img/logo.png" alt="Logo" class="logo">
+        <img src="{{ URL::asset('img/logo.png') }}" alt="Logo" class="logo">
         <div class="right-menu">
-            <a href="hitung_bill.html"><img src="img/hitung_bill.png" alt="Create Bill"></a>
-            <a href="bill_history.html"><img src="img/bill_history.png" alt="Bill History"></a>
-            <a href="profile.html"><img src="img/profile.png" alt="Profile"></a>
+            <a href="{{ url('/create') }}"><img src="{{ URL::asset('img/hitung_bill.png') }}" alt="Create Bill"></a>
+            <a href="{{ url('/history') }}"><img src="{{ URL::asset('img/bill_history.png') }}" alt="Bill History"></a>
+            <a href="{{ url('/profile') }}"><img src="{{ URL::asset('img/profile.png') }}" alt="Profile"></a>
         </div>
     </div>
     <div class="container">
@@ -261,13 +261,13 @@
         document.getElementById('unequallySection').style.display = 'block';
     }
     function redirectToEditMember() {
-        window.location.href = "editmember.html";
+        window.location.href = "/edit-member";
     }
     function redirectToAddMember() {
-        window.location.href = "addmember.html";
+        window.location.href = "/add-member";
     }
     function calculate() {
-        window.location.href = "calculate.html";
+        window.location.href = "/bill";
     }
 </script>
 
