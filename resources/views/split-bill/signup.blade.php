@@ -53,7 +53,8 @@
             font-size: 24px;
         }
 
-        input[type="text"] {
+        input[type="text"],
+        input[type="password"] {
             margin: 10px 0px 20px;
             padding: 10px;
             width: calc(100% - 20px);
@@ -62,14 +63,16 @@
             box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
         }
 
-        button[type="signupbutt"] {
+        button[type="submit"] {
             margin: 20px 0px 20px;
             padding: 10px;
             width: 100%;
-            border: rgba(0, 0, 0, 0.4);
+            border: none;
             background-color: #A0B68A;
             border-radius: 20px;
             font-size: 20px;
+            color: #fff;
+            cursor: pointer;
         }
 
         .login-text {
@@ -80,14 +83,12 @@
 
         .login-text a {
             color: #007BFF;
-            /* Link color */
             text-decoration: none;
             font-weight: bold;
         }
 
         .login-text a:hover {
             text-decoration: underline;
-            /* Underline on hover */
         }
     </style>
 </head>
@@ -98,24 +99,25 @@
             <p class="signup">
                 WELCOME TO DIV.IT
 Are you new here?</p>
-            <form id="signup-form">
+            <form id="signup-form" action="{{ route('actionregister') }}" method="POST">
+                @csrf
                 <label for="name">Name</label>
-                <input type="text" id="name" required />
+                <input type="text" id="name" name="name" required />
                 <br />
 
                 <label for="email">Email Address</label>
-                <input type="text" id="email" required />
+                <input type="text" id="email" name="email" required />
                 <br />
 
                 <label for="pw">Password</label>
-                <input type="text" id="pw" required />
+                <input type="password" id="pw" name="password" required />
                 <br />
 
                 <label for="cpw">Confirm Password</label>
-                <input type="text" id="cpw" required />
+                <input type="password" id="cpw" name="password_confirmation" required />
                 <br />
 
-                <button type="signupbutt">
+                <button type="submit">
                     Sign Up
                 </button>
             </form>

@@ -53,7 +53,8 @@
             font-size: 24px;
         }
 
-        input[type="text"] {
+        input[type="text"],
+        input[type="password"] {
             margin: 10px 0px 20px;
             padding: 10px;
             width: calc(100% - 20px);
@@ -62,14 +63,16 @@
             box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
         }
 
-        button[type="loginbutt"] {
+        button[type="submit"] {
             margin: 20px 0px 20px;
             padding: 10px;
             width: 100%;
-            border: rgba(0, 0, 0, 0.4);
+            border: none;
             background-color: #A0B68A;
             border-radius: 20px;
             font-size: 20px;
+            color: #fff;
+            cursor: pointer;
         }
 
         .signup-text {
@@ -80,14 +83,12 @@
 
         .signup-text a {
             color: #007BFF;
-            /* Link color */
             text-decoration: none;
             font-weight: bold;
         }
 
         .signup-text a:hover {
             text-decoration: underline;
-            /* Underline on hover */
         }
     </style>
 </head>
@@ -101,16 +102,17 @@
         <div class="login-cont">
             <p class="login">
                 WELCOME BACK TO DIV.IT</p>
-            <form id="Login-form">
+            <form id="login-form" action="{{ route('actionlogin') }}" method="POST">
+                @csrf
                 <label for="email">Email Address</label>
-                <input type="text" id="email" required />
+                <input type="text" id="email" name="email" required />
                 <br />
 
                 <label for="pw">Password</label>
-                <input type="text" id="pw" required />
+                <input type="password" id="pw" name="password" required />
                 <br />
 
-                <button type="loginbutt">
+                <button type="submit">
                     Login
                 </button>
             </form>

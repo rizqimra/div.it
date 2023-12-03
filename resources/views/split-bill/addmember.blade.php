@@ -126,7 +126,7 @@ width: 100%;
 
 <body>
     <div class="topnav">
-        <img src="{{ URL::asset('img/logo.png') }}" alt="Logo" class="logo">
+        <a href="{{ url('/create') }}"><img src="{{ URL::asset('img/logo.png') }}" alt="Logo" class="logo"></a>
         <div class="right-menu">
             <a href="{{ url('/create') }}"><img src="{{ URL::asset('img/hitung_bill.png') }}" alt="Create Bill"></a>
             <a href="{{ url('/history') }}"><img src="{{ URL::asset('img/bill_history.png') }}" alt="Bill History"></a>

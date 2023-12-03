@@ -74,7 +74,7 @@
 
 <body>
     <div class="topnav">
-        <img src="{{ URL::asset('img/logo.png') }}" alt="Logo" class="logo">
+        <a href="{{ url('/create') }}"><img src="{{ URL::asset('img/logo.png') }}" alt="Logo" class="logo"></a>
         <div class="right-menu">
             <a href="{{ url('/create') }}"><img src="{{ URL::asset('img/hitung_bill.png') }}" alt="Create Bill"></a>
             <a href="{{ url('/history') }}"><img src="{{ URL::asset('img/bill_history.png') }}" alt="Bill History"></a>
@@ -82,33 +82,15 @@
         </div>
     </div>
     <div class="container">
-        <h1>tanggal</h1>
+        <h1>{{ $bill->created_at->format('d-m-Y') }}</h1>
         <form>
             <table>
-                <tr>
-                    <td>
-                        Haniefa
-                    <td>
-                        Rp 3.000,00
-                    </td>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Putri
-                    <td>
-                        Rp 4.000,00
-                    </td>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        Rizqi
-                    <td>
-                        Rp 4.000,00
-                    </td>
-                    </td>
-                </tr>
+                @foreach($bill->members as $member)
+                    <tr>
+                        <td>{{ $member->name }}</td>
+                        <td>Rp {{ number_format($member->cost, 2) }}</td>
+                    </tr>
+                @endforeach
             </table>
         </form>
 </body>
